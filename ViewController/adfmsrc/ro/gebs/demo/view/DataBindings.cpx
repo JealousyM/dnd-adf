@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="11.1.1.59.23" id="DataBindings" SeparateXMLFiles="false"
+             Package="ro.gebs.demo.view" ClientType="Generic">
+  <pageMap>
+    <page path="/runme.jspx" usageId="ro_gebs_demo_view_runmePageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="ro_gebs_demo_view_runmePageDef"
+          path="ro.gebs.demo.view.pageDefs.runmePageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleDataControl" Package="ro.gebs.demo.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

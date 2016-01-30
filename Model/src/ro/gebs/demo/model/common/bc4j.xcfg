@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="ro.gebs.demo.model.AppModule">
+      <AppModuleConfig name="AppModuleLocal" ApplicationName="ro.gebs.demo.model.AppModule" DeployPlatform="LOCAL" JDBCName="ADFComponentDnD" jbo.project="ro.gebs.demo.model.Model">
+         <Security AppModuleJndiName="ro.gebs.demo.model.AppModule"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="AppModuleShared" ApplicationName="ro.gebs.demo.model.AppModule" DeployPlatform="LOCAL" JDBCName="ADFComponentDnD" jbo.project="ro.gebs.demo.model.Model">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Security AppModuleJndiName="ro.gebs.demo.model.AppModule"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

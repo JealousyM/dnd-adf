@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:panelStretchLayout id="psl1">
+          <f:facet name="center">
+            <af:panelSplitter id="ps1" positionedFromEnd="true"
+                              splitterPosition="550">
+              <f:facet name="first">
+                <af:panelBox id="pb2" showDisclosure="false"
+                             text="First 6 employees in range">
+                  <af:panelGroupLayout id="pgl2" layout="scroll"
+                                       inlineStyle="margin-top:20px;margin-right:20px;">
+                    <h:panelGrid columns="2" id="pg1">
+                      <af:forEach items="#{bindings.EmployeesList.items}"
+                                  var="var" varStatus="varstatus" begin="0"
+                                  end="5">
+                        <af:panelBox text="#{var.label}"
+                                     inlineStyle="padding-left:20px;padding-bottom:20px; width:200.0px;"
+                                     id="pb3">
+                          <f:facet name="toolbar"/>
+                          <af:panelGroupLayout layout="horizontal" valign="top"
+                                               id="pgl4">
+                            <af:image source="/img/contact.png" id="i1"/>
+                            <af:spacer width="10" height="1" id="s4"/>
+                            <af:panelGroupLayout layout="vertical" id="pgl5">
+                              <af:outputText value="#{bindings.EmployeesView.children[varstatus.index].FirstName}"
+                                             inlineStyle="font-size:16px;color:#383A47"
+                                             id="ot1"/>
+                              <af:outputText value="#{bindings.EmployeesView.children[varstatus.index].LastName}"
+                                             inlineStyle="font-size:16px;color:#383A47"
+                                             id="ot2"/>
+                              <af:outputText value="#{bindings.EmployeesView.children[varstatus.index].Email}"
+                                             inlineStyle="font-size:12px;color:#383A47"
+                                             id="ot3"/>
+                              <af:outputText value="#{bindings.EmployeesView.children[varstatus.index].PhoneNumber}"
+                                             inlineStyle="font-size:12px;color:#383A47"
+                                             id="ot5"/>
+                            </af:panelGroupLayout>
+                          </af:panelGroupLayout>
+                          <af:componentDragSource/>
+                        </af:panelBox>
+                      </af:forEach>
+                    </h:panelGrid>
+                    <af:dropTarget dropListener="#{businessMB.handleDnDEvent}"
+                                   actions="MOVE">
+                      <af:dataFlavor flavorClass="javax.faces.component.UIComponent"/>
+                    </af:dropTarget>
+                  </af:panelGroupLayout>
+                </af:panelBox>
+              </f:facet>
+              <f:facet name="second">
+                <af:panelBox id="pb1" showDisclosure="false"
+                             text="Last 6 employees in range">
+                  <af:panelGroupLayout id="pgl3" layout="scroll"
+                                       inlineStyle="margin-top:20px;margin-right:20px;">
+                    <af:panelFormLayout id="pfl1" rows="1" maxColumns="2">
+                      <af:forEach items="#{bindings.EmployeesList.items}"
+                                  varStatus="varstatus" var="var"
+                                  end="#{bindings.EmployeesViewIterator.rangeSize - 1}"
+                                  begin="#{bindings.EmployeesViewIterator.rangeSize - 6}">
+                        <af:panelBox text="#{var.label}"
+                                     inlineStyle="padding-left:20px;padding-bottom:20px; width:200.0px;"
+                                     id="pb4">
+                          <f:facet name="toolbar"/>
+                          <af:panelGroupLayout layout="horizontal" valign="top"
+                                               id="pgl6">
+                            <af:image source="/img/contact.png" id="i2"/>
+                            <af:spacer width="10" height="1" id="s3"/>
+                            <af:panelGroupLayout layout="vertical" id="pgl7">
+                              <af:outputText value="#{bindings.EmployeesView.children[varstatus.index].FirstName}"
+                                             inlineStyle="font-size:16px;color:#383A47"
+                                             id="ot6"/>
+                              <af:outputText value="#{bindings.EmployeesView.children[varstatus.index].LastName}"
+                                             inlineStyle="font-size:16px;color:#383A47"
+                                             id="ot7"/>
+                              <af:outputText value="#{bindings.EmployeesView.children[varstatus.index].Email}"
+                                             inlineStyle="font-size:12px;color:#383A47"
+                                             id="ot8"/>
+                              <af:outputText value="#{bindings.EmployeesView.children[varstatus.index].PhoneNumber}"
+                                             inlineStyle="font-size:12px;color:#383A47"
+                                             id="ot4"/>
+                            </af:panelGroupLayout>
+                          </af:panelGroupLayout>
+                          <af:componentDragSource/>
+                        </af:panelBox>
+                      </af:forEach>
+                    </af:panelFormLayout>
+                    <af:dropTarget dropListener="#{businessMB.handleDnDEvent}"
+                                   actions="MOVE">
+                      <af:dataFlavor flavorClass="javax.faces.component.UIComponent"/>
+                    </af:dropTarget>
+                  </af:panelGroupLayout>
+                </af:panelBox>
+              </f:facet>
+            </af:panelSplitter>
+          </f:facet>
+          <f:facet name="top">
+            <af:panelGroupLayout id="pgl1" layout="vertical" halign="center">
+              <af:spacer width="1" height="20" id="s1"/>
+              <af:outputLabel value="ADF Component Drag-and-Drop sample"
+                              id="ol1"
+                              inlineStyle="font-size:20.0px; color:Gray;"/>
+              <af:separator id="s2"/>
+            </af:panelGroupLayout>
+          </f:facet>
+        </af:panelStretchLayout>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

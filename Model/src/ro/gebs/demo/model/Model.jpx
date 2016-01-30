@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE JboProject SYSTEM "jbo_03_01.dtd">
+<!---->
+<JboProject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Model"
+  Version="11.1.1.59.23"
+  SeparateXMLFiles="true"
+  PackageName="ro.gebs.demo.model">
+  <DesignTime>
+    <Attr Name="_jprName" Value="../../../../../Model.jpr"/>
+    <Attr Name="_NamedConnection" Value="ADFComponentDnD"/>
+    <Attr Name="_appModuleNames0" Value="ro.gebs.demo.model.AppModule"/>
+  </DesignTime>
+  <Containee
+    Name="model"
+    PackageName="ro.gebs.demo.model"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_EO" Value="true"/>
+      <Attr Name="_AS" Value="true"/>
+      <Attr Name="_VO" Value="true"/>
+      <Attr Name="_VL" Value="true"/>
+      <Attr Name="_AM" Value="true"/>
+    </DesignTime>
+  </Containee>
+</JboProject>
